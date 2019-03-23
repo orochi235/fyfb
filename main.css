@@ -2,14 +2,15 @@
   position: absolute;
   border: 5px dashed red;
   width: 800px;
-  left: calc((100% - 800px) / 2);
+  left: calc(-350%);
   text-align: center;
   top: 0;
   bottom: 0;
 }
-
 img {
   height: auto;
   width: 75%;
 }
-
+#menu ul li {
+  list-style-type: none;
+}
