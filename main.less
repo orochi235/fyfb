@@ -1,26 +1,95 @@
-.main {
+html, body {
   position: absolute;
-  border: 5px dashed red;
-  width: 800px;
-  left: calc((100% - 800px) / 2);
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: 0;
+}
+
+.main {
+
+  @footer-height: 72px;
+  @logo-height: 150px;
+  @menu-height: 36px;
+  @main-width: 1100px;
+  @sidebar-width: 300px;
+
+  position: absolute;
+  width: @main-width;
+  left: ~"calc((100% - @{main-width}) / 2)";
   text-align: center;
   top: 0;
   bottom: 0;
-}
 
-img {
-  height: auto;
-  width: 75%;
-}
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: @logo-height;
 
-#menu {
+    img {
+      height: @logo-height;
+    }
+  }
 
-  ul {
+  #menu {
+    position: absolute;
+    left: 300px;
+    right: 0;
+    height: 100%;
+    background-color: red;
 
-    li {
+    ul {
       list-style-type: none;
+      margin: 0;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  nav {
+    position: absolute;
+    height: @logo-height;
+    left: 0;
+    right: 0;
+  }
+
+  .content {
+    @used-height: @menu-height + @footer-height;
+
+    position: absolute;
+    top: @logo-height;
+    height: ~"calc(100% - @{used-height})";
+    width: @main-width;
+
+    .article {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: @main-width - @sidebar-width;
+      border-right: 1px solid black;
+      overflow-y: auto;
     }
 
+    .sidebar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      min-height: ~"calc(100% - @{logo-height})";
+      width: @sidebar-width;
+      overflow-y: auto;
+    }
   }
+
+  footer {
+    height: @footer-height;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: blue;
+  }
+
 
 }
