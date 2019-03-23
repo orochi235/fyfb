@@ -1,0 +1,22 @@
+{
+  "name": "fyfb",
+  "version": "1.0.0",
+  "description": "'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orochi235/fyfb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orochi235/fyfb/issues"
+  },
+  "homepage": "https://github.com/orochi235/fyfb#readme",
+  "devDependencies": {
+    "less": "^3.9.0"
+  }
+}
