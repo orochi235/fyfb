@@ -2,6 +2,11 @@ html, body {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   margin: 0;
+  background-color: gray;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .main {
@@ -17,6 +22,8 @@ html, body {
   left: ~"calc((100% - @{main-width}) / 2)";
   top: 0;
   bottom: 0;
+
+  background-color: white;
 
   .logo {
     position: absolute;
@@ -43,10 +50,29 @@ html, body {
       right: 0;
       list-style-type: none;
 
+
       li {
         display: inline-block;
         vertical-align: bottom;
+
+        line-height: @logo-height;
+        font-size: 24px;
+        margin-right: 12px;
       }
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:visited {
+          color: black;
+        }
+
+        &:hover {
+          color: red;
+        }
+      }
+
     }
   }
 
@@ -70,9 +96,14 @@ html, body {
       top: 16px;
       bottom: 0;
       left: 0;
-      width: @main-width - @sidebar-width - 8px;
-      border-right: 1px solid black;
+      width: @main-width - @sidebar-width;
       overflow-y: auto;
+      padding: 8px;
+
+      .title-image {
+        width: 100%;
+        height: auto;
+      }
     }
 
     .sidebar {
@@ -81,8 +112,14 @@ html, body {
       bottom: 0;
       right: 0;
       min-height: ~"calc(100% - @{logo-height})";
-      width: @sidebar-width - 8px;
+      width: @sidebar-width;
       overflow-y: auto;
+      padding: 8px;
+
+      > img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
@@ -111,7 +148,8 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: blue;
+    border-top: 1px solid black;
+    padding: 8px;
   }
 
 
